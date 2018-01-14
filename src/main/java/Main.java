@@ -36,8 +36,6 @@ public class Main {
             jaxbMarshaller.setProperty("com.sun.xml.internal.bind.namespacePrefixMapper", new NamespaceMapper()); //dodajemy namespace'y
 
             jaxbMarshaller.marshal(new Envelope(new Body(new UzytkownicyAktualizacja(new UzytkownicyAktualizacjaRequest(new ListaStruktur(generator.createUsersList()))))), file);
-        } catch(PropertyException e) {
-            e.printStackTrace();
         } catch (JAXBException e) {
             e.printStackTrace();
         }
