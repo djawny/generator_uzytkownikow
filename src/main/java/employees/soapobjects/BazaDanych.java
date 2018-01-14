@@ -2,9 +2,10 @@ package employees.soapobjects;
 
 import javax.xml.bind.annotation.XmlElement;
 
+import static employees.utils.NamespaceMapper.HOL1_URI;
+
 public class BazaDanych {
 
-    private final String HOL1_URI = "http://schemas.datacontract.org/2004/07/HoldingDTO.DTO.KadryPlace";
     private Baza baza;
 
     public BazaDanych(Baza baza) {

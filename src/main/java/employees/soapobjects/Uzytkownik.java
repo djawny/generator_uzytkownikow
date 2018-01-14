@@ -2,9 +2,9 @@ package employees.soapobjects;
 
 import javax.xml.bind.annotation.XmlElement;
 
-public class Uzytkownik {
+import static employees.utils.NamespaceMapper.HOL1_URI;
 
-    private final String HOL1_URI = "http://schemas.datacontract.org/2004/07/HoldingDTO.DTO.KadryPlace";
+public class Uzytkownik {
 
     private BazaDanych bazaDanych;
     private boolean czyDlaSystemuKadrowego;

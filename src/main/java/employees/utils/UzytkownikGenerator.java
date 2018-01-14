@@ -10,14 +10,14 @@ import java.util.Random;
 
 public class UzytkownikGenerator {
 
-    private final String DATABASE = "1000";
-    private final String COMPANY_NAME = "Centrum_Holding1_SA_SpK_testowa";
-    private final String[] NAMES = {"Agnieszka", "Andrzej", "Marcin", "Marek", "Monika", "Tadeusz", "Tomasz", "Łukasz", "Anna", "Marta", "Ewa", "Michał"};
-    private final String[] SURNAMES = {"Nowak", "Kowalski", "Goralski", "Kowalewski", "Polak", "Kowal", "Przykladowy", "Pokladowy", "Statek", "XMLowy"};
-    private final String EMAIL_DOMAIN = "@holding1.pl";
-    private final int OPERATION_CODE = 1;
-    private final String AD_PREFIX = "ad\\";
-    private final String TELEPHONE_PREFIX = "+48";
+    private static final String DATABASE = "1000";
+    private static final String COMPANY_NAME = "Centrum_Holding1_SA_SpK_testowa";
+    private static final String[] NAMES = {"Agnieszka", "Andrzej", "Marcin", "Marek", "Monika", "Tadeusz", "Tomasz", "Łukasz", "Anna", "Marta", "Ewa", "Michał"};
+    private static final String[] SURNAMES = {"Nowak", "Kowalski", "Goralski", "Kowalewski", "Polak", "Kowal", "Przykladowy", "Pokladowy", "Statek", "XMLowy"};
+    private static final String EMAIL_DOMAIN = "@holding1.pl";
+    private static final int OPERATION_CODE = 1;
+    private static final String AD_PREFIX = "ad\\";
+    private static final String TELEPHONE_PREFIX = "+48";
 
     private long firstUserId;
     private int userCount;

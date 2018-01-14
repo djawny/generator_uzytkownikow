@@ -4,9 +4,9 @@ import javax.xml.bind.annotation.XmlElement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class UzytkownicyAktualizacjaRequest {
+import static employees.utils.NamespaceMapper.REQ_URI;
 
-    private final String REQ_URI = "http://holding.pl/HOLDINGWCF/Requests";
+public class UzytkownicyAktualizacjaRequest {
 
     private ListaStruktur list;
     private String systemKlucz;

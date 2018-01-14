@@ -2,9 +2,9 @@ package employees.soapobjects;
 
 import javax.xml.bind.annotation.XmlElement;
 
-public class Body {
+import static employees.utils.NamespaceMapper.HOL_URI;
 
-    private final String HOL_URI = "http://holding.pl/HOLDINGWCF";
+public class Body {
 
     private UzytkownicyAktualizacja akt;
 
