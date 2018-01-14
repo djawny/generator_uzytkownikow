@@ -1,0 +1,4 @@
+.idea/
+generated_requests/
+generator_xml.iml
+target/
