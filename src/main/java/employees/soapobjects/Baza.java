@@ -14,7 +14,8 @@ class Baza {
         this.NazwaFirmy = nazwaFirmy;
     }
 
-    Baza() {}
+    Baza() {
+    }
 
     public String getBazaDanych() {
         return this.bazaDanych;

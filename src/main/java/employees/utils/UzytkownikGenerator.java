@@ -9,9 +9,9 @@ import java.util.Random;
 
 public class UzytkownikGenerator {
 
-    private final String[] NAMES = { "Agnieszka", "Andrzej", "Marcin", "Marek", "Monika", "Tadeusz", "Tomasz", "Łukasz", "Anna", "Marta", "Ewa", "Michał"};
+    private final String[] NAMES = {"Agnieszka", "Andrzej", "Marcin", "Marek", "Monika", "Tadeusz", "Tomasz", "Łukasz", "Anna", "Marta", "Ewa", "Michał"};
     private final String[] SURNAMES = {"Nowak", "Kowalski", "Goralski", "Kowalewski", "Polak", "Kowal", "Przykladowy", "Pokladowy", "Statek", "XMLowy"};
-    private final String EMAIL_DOMAIN =  "@holding1.pl";
+    private final String EMAIL_DOMAIN = "@holding1.pl";
     private final int OPERATION_CODE = 1;
     private final String AD_PREFIX = "ad\\";
     private final String TELEPHONE_PREFIX = "+48";
@@ -27,15 +27,15 @@ public class UzytkownikGenerator {
         this.isForEnova = isForEnova;
     }
 
-    public List<Uzytkownik> createUsersList(){
-        List<Uzytkownik> listOfUsers = new ArrayList<Uzytkownik>();
-        for(int iter = 0; iter < userCount; iter++){
+    public List<Uzytkownik> createUsersList() {
+        List<Uzytkownik> listOfUsers = new ArrayList<>();
+        for (int iter = 0; iter < userCount; iter++) {
             listOfUsers.add(createUser(iter));
         }
         return listOfUsers;
     }
 
-    private Uzytkownik createUser(long userId){
+    private Uzytkownik createUser(long userId) {
         Uzytkownik user = new Uzytkownik();
         user.setBazaDanych(DATABASE);
         user.setCzyDlaSystemuKadrowego(isForEnova);
@@ -44,7 +44,7 @@ public class UzytkownikGenerator {
         user.setImie(name);
         String surname = SURNAMES[generator.nextInt(SURNAMES.length)];
         user.setNazwisko(surname);
-        String login = name.substring(0,1).toLowerCase() + surname.toLowerCase();
+        String login = name.substring(0, 1).toLowerCase() + surname.toLowerCase();
         user.setEmail(login + EMAIL_DOMAIN);
         user.setKodOperacji(OPERATION_CODE);
         user.setLoginAD(AD_PREFIX + login);

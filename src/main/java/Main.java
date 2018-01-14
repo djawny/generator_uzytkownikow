@@ -5,7 +5,6 @@ import employees.utils.UzytkownikGenerator;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import javax.xml.bind.PropertyException;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,7 +25,7 @@ public class Main {
         UzytkownikGenerator generator = new UzytkownikGenerator(firstId, count, forEnova);
 
         try {
-            new File("generated_requests").mkdir(); //jesli nie ma folderu, tworzymy go
+            new File("generated_requests").mkdir();//jesli nie ma folderu, tworzymy go
             File file = new File("generated_requests/" + new SimpleDateFormat("yyyy-MM-dd_hh#mm#ss#SSS").format(new Date()) + ".xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(Envelope.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();

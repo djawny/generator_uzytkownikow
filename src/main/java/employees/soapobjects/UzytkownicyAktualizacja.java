@@ -12,7 +12,8 @@ public class UzytkownicyAktualizacja {
         this.request = request;
     }
 
-    public UzytkownicyAktualizacja() {}
+    public UzytkownicyAktualizacja() {
+    }
 
     public UzytkownicyAktualizacjaRequest getRequest() {
         return this.request;

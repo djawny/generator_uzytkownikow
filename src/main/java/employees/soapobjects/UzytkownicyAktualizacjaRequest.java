@@ -20,7 +20,8 @@ public class UzytkownicyAktualizacjaRequest {
         this.zadanieCzas = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS").format(new Date());
     }
 
-    public UzytkownicyAktualizacjaRequest() {}
+    public UzytkownicyAktualizacjaRequest() {
+    }
 
     public String getSystemKlucz() {
         return this.systemKlucz;
