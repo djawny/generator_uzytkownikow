@@ -2,19 +2,13 @@ package employees.soapobjects;
 
 import javax.xml.bind.annotation.XmlElement;
 
-class Baza {
+public class Baza {
 
     private static final String HOL1_URI = "http://schemas.datacontract.org/2004/07/HoldingDTO.DTO.KadryPlace";
-
     private String bazaDanych;
     private String NazwaFirmy;
 
-    Baza(String bazaDanych, String nazwaFirmy) {
-        this.bazaDanych = bazaDanych;
-        this.NazwaFirmy = nazwaFirmy;
-    }
-
-    Baza() {
+    public Baza() {
     }
 
     public String getBazaDanych() {

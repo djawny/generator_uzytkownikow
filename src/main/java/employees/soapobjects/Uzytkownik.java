@@ -9,7 +9,7 @@ public class Uzytkownik {
     private BazaDanych bazaDanych;
     private boolean czyDlaSystemuKadrowego;
     private String email;
-    String imie;
+    private String imie;
     private int kodOperacji;
     private String loginAD;
     private String nazwisko;

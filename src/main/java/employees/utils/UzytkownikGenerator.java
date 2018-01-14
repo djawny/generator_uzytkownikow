@@ -1,5 +1,6 @@
 package employees.utils;
 
+import employees.soapobjects.Baza;
 import employees.soapobjects.BazaDanych;
 import employees.soapobjects.Uzytkownik;
 
@@ -9,13 +10,14 @@ import java.util.Random;
 
 public class UzytkownikGenerator {
 
+    private final String DATABASE = "1000";
+    private final String COMPANY_NAME = "Centrum_Holding1_SA_SpK_testowa";
     private final String[] NAMES = {"Agnieszka", "Andrzej", "Marcin", "Marek", "Monika", "Tadeusz", "Tomasz", "Łukasz", "Anna", "Marta", "Ewa", "Michał"};
     private final String[] SURNAMES = {"Nowak", "Kowalski", "Goralski", "Kowalewski", "Polak", "Kowal", "Przykladowy", "Pokladowy", "Statek", "XMLowy"};
     private final String EMAIL_DOMAIN = "@holding1.pl";
     private final int OPERATION_CODE = 1;
     private final String AD_PREFIX = "ad\\";
     private final String TELEPHONE_PREFIX = "+48";
-    private final BazaDanych DATABASE = new BazaDanych();
 
     private long firstUserId;
     private int userCount;
@@ -36,8 +38,13 @@ public class UzytkownikGenerator {
     }
 
     private Uzytkownik createUser(long userId) {
+        Baza baza = new Baza();
+        baza.setNazwaFirmy(COMPANY_NAME);
+        baza.setBazaDanych(DATABASE);
+        BazaDanych bazaDanych = new BazaDanych();
+        bazaDanych.setBaza(baza);
         Uzytkownik user = new Uzytkownik();
-        user.setBazaDanych(DATABASE);
+        user.setBazaDanych(bazaDanych);
         user.setCzyDlaSystemuKadrowego(isForEnova);
         Random generator = new Random();
         String name = NAMES[generator.nextInt(NAMES.length)];
