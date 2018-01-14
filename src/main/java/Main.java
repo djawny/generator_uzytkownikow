@@ -25,14 +25,13 @@ public class Main {
         UzytkownikGenerator generator = new UzytkownikGenerator(firstId, count, forEnova);
 
         try {
-            new File("generated_requests").mkdir();//jesli nie ma folderu, tworzymy go
-            File file = new File("generated_requests/" + new SimpleDateFormat("yyyy-MM-dd_hh#mm#ss#SSS").format(new Date()) + ".xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(Envelope.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            jaxbMarshaller.setProperty("com.sun.xml.internal.bind.namespacePrefixMapper", new NamespaceMapper());
 
-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true); //formatowanie
-
-            jaxbMarshaller.setProperty("com.sun.xml.internal.bind.namespacePrefixMapper", new NamespaceMapper()); //dodajemy namespace'y
+            new File("generated_requests").mkdir();
+            File file = new File("generated_requests/" + new SimpleDateFormat("yyyy-MM-dd_hh#mm#ss#SSS").format(new Date()) + ".xml");
 
             jaxbMarshaller.marshal(new Envelope(new Body(new UzytkownicyAktualizacja(new UzytkownicyAktualizacjaRequest(new ListaStruktur(generator.createUsersList()))))), file);
         } catch (JAXBException e) {
